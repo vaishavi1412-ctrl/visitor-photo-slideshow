@@ -2,7 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import './db.js'; // running this file creates the database tables
+import { UPLOAD_DIR } from './config.js';
 import visitorRoutes from './routes/visitors.js';
+import photoRoutes from './routes/photos.js';
 
 const app = express();
 
@@ -15,12 +17,23 @@ app.use(
 app.use(express.json());
 app.use(cookieParser());
 
+// Photos are served from the uploads folder. File names are random UUIDs.
+app.use(
+  '/uploads',
+  express.static(UPLOAD_DIR, {
+    index: false,
+    dotfiles: 'deny',
+    setHeaders: (res) => res.setHeader('X-Content-Type-Options', 'nosniff'),
+  })
+);
+
 // A simple route to check that the server is alive
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });
 });
 
 app.use('/api/visitors', visitorRoutes);
+app.use('/api/photos', photoRoutes);
 
 // Catches any error and sends a safe message (no secrets, no stack traces)
 app.use((err, req, res, next) => {
