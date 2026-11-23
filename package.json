@@ -1,0 +1,11 @@
+﻿{
+  "name": "visitor-photo-slideshow",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n backend,frontend -c blue,green \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "test": "npm test --prefix backend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}
