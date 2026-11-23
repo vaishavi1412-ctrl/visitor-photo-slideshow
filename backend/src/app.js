@@ -5,6 +5,7 @@ import './db.js'; // running this file creates the database tables
 import { UPLOAD_DIR } from './config.js';
 import visitorRoutes from './routes/visitors.js';
 import photoRoutes from './routes/photos.js';
+import slideshowRoutes from './routes/slideshow.js';
 
 const app = express();
 
@@ -34,6 +35,7 @@ app.get('/api/health', (req, res) => {
 
 app.use('/api/visitors', visitorRoutes);
 app.use('/api/photos', photoRoutes);
+app.use('/api/slideshow', slideshowRoutes);
 
 // Catches any error and sends a safe message (no secrets, no stack traces)
 app.use((err, req, res, next) => {
