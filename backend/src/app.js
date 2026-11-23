@@ -6,6 +6,8 @@ import { UPLOAD_DIR } from './config.js';
 import visitorRoutes from './routes/visitors.js';
 import photoRoutes from './routes/photos.js';
 import slideshowRoutes from './routes/slideshow.js';
+import adminRoutes from './routes/admin.js';
+import removalRequestRoutes from './routes/removalRequests.js';
 
 const app = express();
 
@@ -36,6 +38,8 @@ app.get('/api/health', (req, res) => {
 app.use('/api/visitors', visitorRoutes);
 app.use('/api/photos', photoRoutes);
 app.use('/api/slideshow', slideshowRoutes);
+app.use('/api/removal-requests', removalRequestRoutes);
+app.use('/api/admin', adminRoutes);
 
 // Catches any error and sends a safe message (no secrets, no stack traces)
 app.use((err, req, res, next) => {
