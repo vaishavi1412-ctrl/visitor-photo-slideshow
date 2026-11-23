@@ -1,0 +1,11 @@
+﻿node_modules/
+.env
+dist/
+*.log
+.DS_Store
+
+# Uploaded photos and the database must never be committed
+backend/uploads/*
+!backend/uploads/.gitkeep
+backend/data/*
+!backend/data/.gitkeep
