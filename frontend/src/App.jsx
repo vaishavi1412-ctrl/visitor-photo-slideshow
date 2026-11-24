@@ -3,6 +3,8 @@ import Layout from './components/Layout.jsx';
 import Home from './pages/Home.jsx';
 import Register from './pages/Register.jsx';
 import Returning from './pages/Returning.jsx';
+import Upload from './pages/Upload.jsx';
+import Success from './pages/Success.jsx';
 import ComingSoon from './pages/ComingSoon.jsx';
 import NotFound from './pages/NotFound.jsx';
 
@@ -14,8 +16,8 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/returning" element={<Returning />} />
-        <Route path="/upload" element={<ComingSoon title="Photo upload" />} />
-        <Route path="/success" element={<ComingSoon title="Upload success" />} />
+        <Route path="/upload" element={<Upload />} />
+        <Route path="/success" element={<Success />} />
         <Route path="*" element={<NotFound />} />
       </Route>
 

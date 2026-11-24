@@ -27,6 +27,7 @@ export default function Layout() {
               Home
             </NavLink>
             {visitor && <NavLink to="/upload">Upload</NavLink>}
+            {visitor && <NavLink to="/success">My photos</NavLink>}
             {visitor && <span className="nav-user">Hi, {visitor.fullName.split(' ')[0]}</span>}
           </nav>
         </div>
