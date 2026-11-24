@@ -5,6 +5,7 @@ import Register from './pages/Register.jsx';
 import Returning from './pages/Returning.jsx';
 import Upload from './pages/Upload.jsx';
 import Success from './pages/Success.jsx';
+import Slideshow from './pages/Slideshow.jsx';
 import ComingSoon from './pages/ComingSoon.jsx';
 import NotFound from './pages/NotFound.jsx';
 
@@ -21,8 +22,10 @@ export default function App() {
         <Route path="*" element={<NotFound />} />
       </Route>
 
-      {/* Full-screen and admin pages have their own look, added in later groups */}
-      <Route path="/slideshow" element={<ComingSoon title="Full-screen slideshow" />} />
+      {/* The TV screen has no navigation bar */}
+      <Route path="/slideshow" element={<Slideshow />} />
+
+      {/* Admin pages are added in the next group */}
       <Route path="/admin/*" element={<ComingSoon title="Admin area" />} />
     </Routes>
   );
