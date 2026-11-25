@@ -6,13 +6,19 @@ import Returning from './pages/Returning.jsx';
 import Upload from './pages/Upload.jsx';
 import Success from './pages/Success.jsx';
 import Slideshow from './pages/Slideshow.jsx';
-import ComingSoon from './pages/ComingSoon.jsx';
 import NotFound from './pages/NotFound.jsx';
+import { AdminProvider } from './pages/admin/AdminContext.jsx';
+import AdminLogin from './pages/admin/AdminLogin.jsx';
+import AdminLayout from './pages/admin/AdminLayout.jsx';
+import AdminDashboard from './pages/admin/AdminDashboard.jsx';
+import AdminPhotos from './pages/admin/AdminPhotos.jsx';
+import AdminVisitors from './pages/admin/AdminVisitors.jsx';
+import AdminSettings from './pages/admin/AdminSettings.jsx';
 
 export default function App() {
   return (
     <Routes>
-      {/* Pages that share the navigation bar and footer */}
+      {/* Visitor pages share the navigation bar and footer */}
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
@@ -25,8 +31,16 @@ export default function App() {
       {/* The TV screen has no navigation bar */}
       <Route path="/slideshow" element={<Slideshow />} />
 
-      {/* Admin pages are added in the next group */}
-      <Route path="/admin/*" element={<ComingSoon title="Admin area" />} />
+      {/* Admin area: the login page is open, everything else needs a signed-in admin */}
+      <Route path="/admin" element={<AdminProvider />}>
+        <Route path="login" element={<AdminLogin />} />
+        <Route element={<AdminLayout />}>
+          <Route index element={<AdminDashboard />} />
+          <Route path="photos" element={<AdminPhotos />} />
+          <Route path="visitors" element={<AdminVisitors />} />
+          <Route path="settings" element={<AdminSettings />} />
+        </Route>
+      </Route>
     </Routes>
   );
 }
