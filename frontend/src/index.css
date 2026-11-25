@@ -1401,6 +1401,7 @@ textarea:focus {
   inset: 0;
   z-index: 100;
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto minmax(0, 1fr) auto;
   overflow: hidden;
   background: var(--ink);
@@ -2369,4 +2370,12 @@ textarea:focus {
     width: 70px;
     height: 70px;
   }
+}
+
+/* keep the slideshow as wide as the window */
+.tv-header,
+.tv-stage,
+.tv-bottom,
+.tv-strip {
+  min-width: 0;
 }
