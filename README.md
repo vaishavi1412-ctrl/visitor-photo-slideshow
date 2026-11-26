@@ -222,4 +222,4 @@ Not deployed. The application runs locally, as the assignment allows.
 
 ## Author
 
-`<Your name>`, MCA student. Replace this line before submitting.
+`<Darji Vaishavi kalpeshbhai>`, MCA student. Replace this line before submitting.
