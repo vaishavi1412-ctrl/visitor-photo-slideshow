@@ -87,7 +87,7 @@ visitor-photo-slideshow/
 ### Install
 
 ```bash
-git clone https://github.com/<your-username>/visitor-photo-slideshow.git
+git clone https://github.com/vaishavi1412-ctrl/visitor-photo-slideshow.git
 cd visitor-photo-slideshow
 npm install
 npm install --prefix backend
@@ -222,4 +222,4 @@ Not deployed. The application runs locally, as the assignment allows.
 
 ## Author
 
-`<Darji Vaishavi kalpeshbhai>`, MCA student. Replace this line before submitting.
+`<Darji Vaishavi kalpeshbhai>`, MCA student. 
