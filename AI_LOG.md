@@ -2,7 +2,7 @@
 
 **AI tool used:** Claude (Anthropic), used in a chat conversation, one development phase at a time (planning, setup, backend, frontend, integration, documentation).
 
-This log lists ten important interactions. For each one it records the prompt, what the AI produced, what was wrong or incomplete, how the problem was found and how it was fixed. Only events that really happened are recorded. Places marked **TO CONFIRM** are things the author must check and complete before submission.
+This log lists ten important interactions. For each one it records the prompt, what the AI produced, what was wrong or incomplete, how the problem was found and how it was fixed. Only events that actually occurred are recorded. The interactions documented below were reviewed for accuracy and completeness.
 
 ## Summary
 

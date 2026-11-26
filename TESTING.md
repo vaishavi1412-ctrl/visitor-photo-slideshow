@@ -99,7 +99,39 @@ Both scripts add test visitors to the real database. `backend/scripts/cleanup-te
 
 ## 6. Manual test plan (the 12 cases from the assignment)
 
-Use a clean database if possible (see the README for how to reset). Test files: any real photos, a text file `notes.txt`, and a fake 6 MB file `big.png`. Fill in **Actual result** and **Result** after you have performed each test. Write **Pass** or **Fail** only for tests you have really done.
+Use a clean database if possible (see the README for how to reset). Test files: any real photos, a text file `notes.txt`, and a fake 6 MB file `big.png`. Fill in **PS C:\Users\Vaishavi\visitor-photo-slideshow\backend> node scripts/simulate-uploads.js checks | Tee-Object -FilePath C:\Users\Vaishavi\test-files\checks-output.txt
+>> 
+Sending good and bad uploads straight to the server (no browser checks)...
+
+PASS  Upload without registering is refused (HTTP 401)
+PASS  Upload without the consent value is refused (HTTP 400)
+PASS  Upload with consent set to "false" is refused (HTTP 400)
+PASS  A .txt file is rejected as the wrong format (HTTP 400)
+PASS  A text file renamed to .jpg is rejected (not a real image) (HTTP 400)
+PASS  A file over 5 MB is refused (HTTP 413)
+PASS  A valid photo with consent is saved (HTTP 201)
+PASS  The same photo again is refused as a duplicate (HTTP 400)
+PASS  Refused uploads saved nothing (only 1 photo exists) (1 photo(s))
+PASS  The visitor can delete their own photo (HTTP 200)
+PASS  After deleting, no photos remain (0 photo(s))
+
+A visitor called "Check Visitor" was created. You can delete it on the admin Visitors page.
+
+All checks passed.
+PS C:\Users\Vaishavi\visitor-photo-slideshow\backend> node scripts/simulate-uploads.js uploads 5 | Tee-Object -FilePath C:\Users\Vaishavi\test-files\uploads-output.txt
+Registering 5 visitors, then uploading one photo each, all at once...
+
+PASS  Every upload succeeded (HTTP 201) (5 of 5)
+PASS  Every photo got a unique ID (5 unique IDs)
+PASS  Every photo was saved as its own file (5 files)
+PASS  All photos appear in the slideshow list (5 of 5)
+
+These photos are now on your real slideshow. To remove them, delete the
+"Simulated Visitor" entries on the admin Visitors page (their photos go too).
+
+All checks passed.
+PS C:\Users\Vaishavi\visitor-photo-slideshow\backend> 
+** and **Result** after you have performed each test. Write **Pass** or **Fail** only for tests you have really done.
 
 | # | Test | Steps | Expected result | Actual result | Result | Other evidence |
 |---|---|---|---|---|---|---|

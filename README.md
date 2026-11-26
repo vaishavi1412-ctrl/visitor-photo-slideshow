@@ -223,3 +223,6 @@ Not deployed. The application runs locally, as the assignment allows.
 ## Author
 
 `<Darji Vaishavi kalpeshbhai>`, MCA student. 
+## Author
+
+Vaishavi Kalpeshbhai Darji
